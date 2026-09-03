@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roadmap — Case Study | Olumide Sajowa</title>
+<meta name="description" content="A conversational AI intake system that scopes a client project before the first reply, built to protect time rather than to sell as a product.">
+<link rel="icon" href="../images/logo/mark-64.png">
+<link rel="stylesheet" href="../styles.css">
+<style>:root{ --signal:#7c9cff; }</style>
+</head>
+<body>
+<div class="grid-field"></div>
+<a href="../index.html#work" class="cs-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>All work</a>
+
+<header class="site-nav">
+  <a href="../index.html" class="brand"><img src="../images/logo/mark-128.png" alt=""><span>Olumide Sajowa<small>Design Engineer</small></span></a>
+  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  <nav>
+    <a href="../index.html#work">Work</a>
+    <a href="../about.html">About</a>
+    <a href="../index.html#process">Process</a>
+    <a href="../contact.html" class="nav-cta">Start a project</a>
+    <button class="theme-toggle" aria-label="Toggle theme">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main>
+  <section class="cs-hero wrap">
+    <span class="tag"><span class="dot"></span>Case study 05 / AI agents, internal tool</span>
+    <h1 style="font-size:clamp(2.2rem,6.4vw,5.4rem); letter-spacing:-0.03em; line-height:0.98; margin-top:22px; max-width:18ch;">Roadmap</h1>
+    <p style="max-width:60ch; color:var(--paper-dim); font-size:17px; line-height:1.7; margin-top:24px;">A conversational AI intake system that scopes a client project before I've replied to the first email, built to protect my own time rather than to sell as a separate product.</p>
+    <div class="cs-meta-row">
+      <div class="cs-meta">Role<b>Full-stack build, AI agent design</b></div>
+      <div class="cs-meta">Stack<b>Next.js, AI SDK, structured output</b></div>
+      <div class="cs-meta">Type<b>Internal tool</b></div>
+      <div class="cs-meta">Status<b><a href="https://omni-craft-studio-onboarding-portal-ten.vercel.app" target="_blank" rel="noopener">View live product ↗</a></b></div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">01 / The problem</span>
+      <div></div>
+      <div class="cs-body">
+        <p>Every new client conversation starts with roughly the same dozen questions, asked over email or on a first call: what's the actual problem, who has it, what's the budget range, what's the timeline, what have you already tried. Half the time the brief that comes back is still missing the one detail that would have changed the scope entirely, and the founder on the other end doesn't know that detail is missing because nobody asked the right follow-up question at the right moment. That gap costs real time on both sides before any real work starts.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">02 / The thinking</span>
+      <div></div>
+      <div class="cs-body">
+        <p>I rejected a static intake form with a long list of fields, the kind most agencies use. Forms get abandoned partway through, and worse, they can't adapt when one answer implies a completely different next question. Someone describing a broken checkout flow needs different follow-up questions than someone describing a brand that doesn't exist yet, and a fixed form can't tell the difference.</p>
+        <p>I built a conversational interface instead, one that asks a natural follow-up the way I actually would on a real discovery call, and that accepts attachments directly in the conversation, because founders often paste in a screenshot of the exact thing that's broken rather than describe an interface problem in words. That's a much richer signal than a text field ever gets, and the system is built to use it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">03 / The business and the users</span>
+      <div></div>
+      <div class="cs-body">
+        <p>This exists to protect my own time, not to sell as a standalone product to other studios. A founder describes their problem in plain language, in their own words, and gets a structured roadmap back: a scoped brief with the shape of a real proposal already visible in it, rather than a chat transcript I'd have to reread and manually organize myself. The first real conversation then starts from that scoped brief instead of from a blank page and a reply that just says "tell me more."</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">04 / The constraints</span>
+      <div></div>
+      <div class="cs-body">
+        <p>Output has to be structured enough to hand straight into a proposal document, which meant the model's responses had to come back as structured data, not just free-flowing chat text, so the interesting parts (problem, constraints, budget signal, timeline) can be pulled out programmatically rather than re-read by hand. It also has to hold context across a multi-turn conversation without losing earlier details the person already gave it, since nothing frustrates someone faster than being asked to repeat something they already said three messages ago.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section" style="border-bottom:none;">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">05 / The outcome</span>
+      <div></div>
+      <div class="cs-body">
+        <p>Live and in use for my own client pipeline. The honest measure of success here isn't a usage metric, it's that I no longer draft the same discovery email twice, and that the first real conversation with a new client now starts further along than it used to.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="next-project wrap">
+    <span class="label">Next case study</span>
+    <a href="enocessity.html"><h2>Enocessity ↗</h2></a>
+  </section>
+</main>
+
+<footer><div class="wrap foot-row"><span>© 2026 Olumide Sajowa</span><div style="display:flex;gap:20px;"><a href="https://www.linkedin.com/in/olumidesajowa" target="_blank" rel="noopener">LinkedIn</a><a href="https://x.com/smyde2" target="_blank" rel="noopener">Twitter / X</a></div><a href="../contact.html">Get in touch</a></div></footer>
+
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="../main.js"></script>
+</body>
+</html>

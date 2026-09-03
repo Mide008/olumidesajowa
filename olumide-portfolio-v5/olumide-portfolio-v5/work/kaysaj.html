@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaysaj Alternative Energy — Case Study | Olumide Sajowa</title>
+<meta name="description" content="Brand and site for a Nigerian solar and surveillance engineering firm, built around failure scenarios and a live cost estimator instead of a services brochure.">
+<link rel="icon" href="../images/logo/mark-64.png">
+<link rel="stylesheet" href="../styles.css">
+<style>:root{ --signal:#f2a63a; }
+  .scenario-row{ display:grid; grid-template-columns:120px 1fr; gap:20px; padding:20px 0; border-bottom:1px solid var(--line); }
+  .scenario-row b{ font-family:var(--font-mono); font-size:12px; color:var(--signal); }
+  .scenario-row p{ color:var(--paper-dim); font-size:14.5px; line-height:1.7; }
+</style>
+</head>
+<body>
+<div class="grid-field"></div>
+<a href="../index.html#work" class="cs-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>All work</a>
+
+<header class="site-nav">
+  <a href="../index.html" class="brand"><img src="../images/logo/mark-128.png" alt=""><span>Olumide Sajowa<small>Design Engineer</small></span></a>
+  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  <nav>
+    <a href="../index.html#work">Work</a>
+    <a href="../about.html">About</a>
+    <a href="../index.html#process">Process</a>
+    <a href="../contact.html" class="nav-cta">Start a project</a>
+    <button class="theme-toggle" aria-label="Toggle theme">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main>
+  <section class="cs-hero wrap">
+    <span class="tag"><span class="dot"></span>Case study 07 / Brand & web, client</span>
+    <h1 style="font-size:clamp(2.2rem,6.4vw,5.4rem); letter-spacing:-0.03em; line-height:0.98; margin-top:22px; max-width:18ch;">Kaysaj Alternative Energy</h1>
+    <p style="max-width:60ch; color:var(--paper-dim); font-size:17px; line-height:1.7; margin-top:24px;">Positioning and a full site build for a Nigerian solar, CCTV, and automation engineering firm competing in a market that judges installers on price alone, right up until the moment an undersized system fails during the blackout or break-in it was supposed to prevent.</p>
+    <div class="cs-meta-row">
+      <div class="cs-meta">Role<b>Brand identity, full site build</b></div>
+      <div class="cs-meta">Stack<b>HTML, CSS, JavaScript</b></div>
+      <div class="cs-meta">Type<b>Client engagement</b></div>
+      <div class="cs-meta">Status<b><a href="https://kaysaj-altenergy.vercel.app" target="_blank" rel="noopener">View live product ↗</a></b></div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">01 / The problem</span>
+      <div></div>
+      <div class="cs-body">
+        <p>Solar and CCTV installers in Nigeria are almost always judged on price alone, and that single fact quietly shapes the whole market toward undersized systems, thinner cabling than the load actually needs, and inverters sized to hit a number rather than to survive real use. Those corners don't show up as a problem on installation day. They show up eighteen months later, during exactly the moment the system was bought to handle: a blackout that runs long, or a break-in that the cameras were supposed to catch. A site that just lists "solar installation, CCTV, automation" as three services does nothing to interrupt that price-first buying pattern, because it never makes the cost of cutting corners concrete.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap">
+      <span class="index">02 / The thinking, told through the failures it's built to prevent</span>
+      <div style="margin-top:20px;">
+        <div class="scenario-row"><b>Blackout</b><p>An undersized inverter can't carry the load through an extended outage, and the property loses power at exactly the moment backup was supposed to matter.</p></div>
+        <div class="scenario-row"><b>Break-in</b><p>Cameras positioned for a quote, not for actual coverage, miss the one angle that mattered on the one night it mattered.</p></div>
+        <div class="scenario-row"><b>18 months in</b><p>Cheap cabling, chosen to hit a lower number on day one, degrades and starts costing more in repeat callouts than better cable would have cost upfront.</p></div>
+      </div>
+      <div class="cs-body" style="margin-top:20px;">
+        <p>I rejected the standard "our services" brochure structure entirely, because a features list doesn't sell engineering rigor to someone who's never been failed by a bad installation and doesn't yet know what to look for. A described failure does. Building the entire site narrative around these specific scenarios, rather than around generic capability statements, sells the thing Kaysaj actually has over cheaper competitors: systems sized for the load, not for the quote.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">03 / The business and the users</span>
+      <div></div>
+      <div class="cs-body">
+        <p>The buyer is a property owner or facilities manager who has either already been burned by a bad installer, or is actively afraid of being burned, which makes transparency the fastest way to earn their trust rather than a sales call gatekeeping every number behind a contact form. The site leads with an interactive infrastructure estimate configurator that returns a directional cost range immediately, before a salesperson is ever involved, so the buyer can self-qualify and arrive at the first real conversation already informed rather than starting cold.</p>
+        <p>Because solar and surveillance equipment pricing in Nigeria swings with exchange rates and import duties, every figure the configurator returns is explicitly labelled as a directional estimate, not a fixed quote. That single labelling decision protects the client from being held to a number that currency movement made obsolete by the time an installation actually happens, while still giving the buyer something concrete to plan around.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section" style="border-bottom:none;">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">04 / The outcome</span>
+      <div></div>
+      <div class="cs-body">
+        <p>Live and functioning as the client's primary sales asset. The estimate tool now serves as the qualifying step before a paid site inspection, which is precisely the funnel the client needed: fewer unqualified calls, and every call that does come in arriving with a rough budget already in mind instead of starting from "how much does this cost" with no context.</p>
+      </div>
+      <div style="grid-column:1/-1;">
+        <div class="stat-strip" style="margin-top:8px;">
+          <div class="cell"><b>15+</b><span>years engineering experience shown</span></div>
+          <div class="cell"><b>360°</b><span>property control positioning</span></div>
+          <div class="cell"><b>24/7</b><span>continuous coverage promise</span></div>
+          <div class="cell"><b>1</b><span>interactive estimate tool</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="next-project wrap">
+    <span class="label">Next case study</span>
+    <a href="roothaus.html"><h2>RootHaus ↗</h2></a>
+  </section>
+</main>
+
+<footer><div class="wrap foot-row"><span>© 2026 Olumide Sajowa</span><div style="display:flex;gap:20px;"><a href="https://www.linkedin.com/in/olumidesajowa" target="_blank" rel="noopener">LinkedIn</a><a href="https://x.com/smyde2" target="_blank" rel="noopener">Twitter / X</a></div><a href="../contact.html">Get in touch</a></div></footer>
+
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="../main.js"></script>
+</body>
+</html>

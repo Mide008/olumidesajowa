@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Olumide Sajowa</title>
+<meta name="description" content="Start a project with Olumide Sajowa, or reach him directly about a design engineering role.">
+<link rel="icon" href="images/logo/mark-64.png">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .contact-wrap{ padding-top:150px; padding-bottom:80px; display:grid; grid-template-columns:1fr 1fr; gap:60px; }
+  .contact-wrap h1{ font-size:clamp(2rem,5vw,3.6rem); letter-spacing:-0.02em; line-height:1.05; max-width:14ch; }
+  .field{ margin-bottom:20px; }
+  .field label{ display:block; font-family:var(--font-mono); font-size:11px; color:var(--mute); margin-bottom:8px; }
+  .field input, .field textarea, .field select{
+    width:100%; background:var(--ink); border:1px solid var(--line-strong); border-radius:2px;
+    color:var(--white); font-family:var(--font-display); font-size:15px; padding:13px 14px; outline:none;
+    transition:border-color .3s var(--ease-out); appearance:none; -webkit-appearance:none;
+  }
+  .field select{
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238c897c' stroke-width='2'><path d='M6 9l6 6 6-6'/></svg>");
+    background-repeat:no-repeat; background-position:right 14px center; background-size:16px; padding-right:40px;
+  }
+  .field select option{ background:var(--ink); color:var(--white); }
+  [data-theme="light"] .field input, [data-theme="light"] .field textarea, [data-theme="light"] .field select{ background:var(--ink); }
+  [data-theme="light"] .field select option{ background:var(--ink); color:var(--white); }
+  .field input:focus, .field textarea:focus, .field select:focus{ border-color:var(--signal); }
+  .field textarea{ min-height:120px; resize:vertical; }
+  .field.honey{ position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
+  .direct-list{ margin-top:40px; padding-top:28px; border-top:1px solid var(--line); }
+  .direct-list a{ display:flex; justify-content:space-between; padding:14px 0; border-bottom:1px solid var(--line); font-family:var(--font-mono); font-size:13px; color:var(--paper-dim); }
+  .direct-list a:hover{ color:var(--signal); }
+  .contact-intro{ display:flex; align-items:center; gap:16px; margin-bottom:22px; }
+  .contact-intro img{ width:56px; height:56px; border-radius:50%; object-fit:cover; border:1px solid var(--line-strong); }
+  .form-note{ font-family:var(--font-mono); font-size:12px; margin-top:16px; display:none; padding:12px 14px; border:1px solid var(--line-strong); }
+  .form-note.show{ display:block; }
+  .form-note.ok{ color:var(--signal); border-color:var(--signal); }
+  .form-note.err{ color:var(--paper-dim); }
+  .btn[disabled]{ opacity:0.55; pointer-events:none; }
+  @media (max-width:860px){ .contact-wrap{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<div class="grid-field"></div>
+
+<header class="site-nav">
+  <a href="index.html" class="brand"><img src="images/logo/mark-128.png" alt=""><span>Olumide Sajowa<small>Design Engineer</small></span></a>
+  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  <nav>
+    <a href="index.html#work">Work</a>
+    <a href="about.html">About</a>
+    <a href="index.html#process">Process</a>
+    <a href="contact.html" class="is-active nav-cta">Start a project</a>
+    <button class="theme-toggle" aria-label="Toggle theme">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main class="wrap">
+  <div class="contact-wrap">
+    <div>
+      <div class="contact-intro"><img src="images/olumide-portrait-700.jpg" alt="Olumide Sajowa"><span class="tag"><span class="dot"></span>Currently taking new engagements</span></div>
+      <h1>Tell me what's actually broken.</h1>
+      <p style="color:var(--mute); font-size:15px; line-height:1.75; margin-top:22px; max-width:44ch;">A short brief beats a long one. What's the problem, who has it, and what have you already tried. I reply within two business days.</p>
+
+      <div class="direct-list">
+        <a href="mailto:olumidesajowa@gmail.com"><span>Email</span><span>olumidesajowa@gmail.com</span></a>
+        <a href="tel:+2348053065568"><span>Phone</span><span>+234 805 306 5568</span></a>
+        <a href="https://www.linkedin.com/in/olumidesajowa" target="_blank" rel="noopener"><span>LinkedIn</span><span>in/olumidesajowa ↗</span></a>
+        <a href="https://x.com/smyde2" target="_blank" rel="noopener"><span>Twitter / X</span><span>@smyde2 ↗</span></a>
+        <a href="index.html#work"><span>Work</span><span>See what's shipped ↗</span></a>
+      </div>
+    </div>
+
+    <form id="contact-form" novalidate>
+      <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" required minlength="2"></div>
+      <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required></div>
+      <div class="field"><label for="type">What are you looking for</label>
+        <select id="type" name="type">
+          <option>A studio engagement (brand, product, or full build)</option>
+          <option>Ongoing design & engineering support for a founder or startup</option>
+          <option>A full-time design engineering role</option>
+          <option>A fractional or part-time design partner</option>
+          <option>Brand identity or packaging project</option>
+          <option>Technical advisory or audit (UX, architecture, AI integration)</option>
+          <option>Speaking, workshop, or collaboration</option>
+          <option>Something else</option>
+        </select>
+      </div>
+      <div class="field"><label for="message">The brief</label><textarea id="message" name="message" required minlength="20" placeholder="What's broken, who has it, what have you tried already"></textarea></div>
+      <div class="field honey"><label for="company">Company</label><input id="company" name="company" type="text" tabindex="-1" autocomplete="off"></div>
+      <button type="submit" class="btn solid" id="submit-btn">Send it <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></button>
+      <div class="form-note" id="form-note"></div>
+    </form>
+  </div>
+</main>
+
+<footer><div class="wrap foot-row"><span>© 2026 Olumide Sajowa</span><div style="display:flex;gap:20px;"><a href="https://www.linkedin.com/in/olumidesajowa" target="_blank" rel="noopener">LinkedIn</a><a href="https://x.com/smyde2" target="_blank" rel="noopener">Twitter / X</a></div><a href="index.html">Back home</a></div></footer>
+
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="main.js"></script>
+<script>
+document.getElementById('contact-form').addEventListener('submit', async function(e){
+  e.preventDefault();
+  const form = e.target;
+  const btn = document.getElementById('submit-btn');
+  const note = document.getElementById('form-note');
+  const payload = {
+    name: form.name.value.trim(),
+    email: form.email.value.trim(),
+    subject: form.type.value,
+    message: form.message.value.trim(),
+    honey: form.company.value
+  };
+  note.className = 'form-note'; note.textContent = '';
+  if (payload.name.length < 2 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email) || payload.message.length < 20) {
+    note.textContent = 'Fill in your name, a valid email, and a brief of at least 20 characters.';
+    note.classList.add('show','err');
+    return;
+  }
+  btn.setAttribute('disabled','true'); btn.textContent = 'Sending…';
+  try {
+    const res = await fetch('/api/contact', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload)
+    });
+    const data = await res.json().catch(() => ({}));
+    if (res.ok) {
+      note.textContent = "Sent. I'll reply within two business days.";
+      note.classList.add('show','ok');
+      form.reset();
+    } else {
+      note.textContent = data.error || 'Something went wrong. Email olumidesajowa@gmail.com directly.';
+      note.classList.add('show','err');
+    }
+  } catch (err) {
+    note.textContent = 'Network error. Email olumidesajowa@gmail.com directly.';
+    note.classList.add('show','err');
+  } finally {
+    btn.removeAttribute('disabled'); btn.innerHTML = 'Send it <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>';
+  }
+});
+</script>
+</body>
+</html>

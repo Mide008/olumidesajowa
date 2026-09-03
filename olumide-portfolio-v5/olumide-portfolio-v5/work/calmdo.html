@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calmdo — Case Study | Olumide Sajowa</title>
+<meta name="description" content="A minimalist to-do list built from the smallest possible unit up, for a day that does not stay on one device.">
+<link rel="icon" href="../images/logo/mark-64.png">
+<link rel="stylesheet" href="../styles.css">
+<style>:root{ --signal:#3ecfa8; }</style>
+</head>
+<body>
+<div class="grid-field"></div>
+<a href="../index.html#work" class="cs-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>All work</a>
+
+<header class="site-nav">
+  <a href="../index.html" class="brand"><img src="../images/logo/mark-128.png" alt=""><span>Olumide Sajowa<small>Design Engineer</small></span></a>
+  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  <nav>
+    <a href="../index.html#work">Work</a>
+    <a href="../about.html">About</a>
+    <a href="../index.html#process">Process</a>
+    <a href="../contact.html" class="nav-cta">Start a project</a>
+    <button class="theme-toggle" aria-label="Toggle theme">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main>
+  <section class="cs-hero wrap">
+    <span class="tag"><span class="dot"></span>Case study 04 / Productivity</span>
+    <h1 style="font-size:clamp(2.2rem,6.4vw,5.4rem); letter-spacing:-0.03em; line-height:0.98; margin-top:22px; max-width:18ch;">Calmdo</h1>
+    <p style="max-width:60ch; color:var(--paper-dim); font-size:17px; line-height:1.7; margin-top:24px;">A calm, minimalist to-do list built from the smallest possible unit up, for a day that does not stay on one device.</p>
+    <div class="cs-meta-row">
+      <div class="cs-meta">Role<b>Product design & architecture</b></div>
+      <div class="cs-meta">Stack<b>Next.js, Supabase, PWA</b></div>
+      <div class="cs-meta">Type<b>Personal product</b></div>
+      <div class="cs-meta">Status<b><a href="https://calmdo-web2.vercel.app" target="_blank" rel="noopener">View live product ↗</a></b></div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">01 / The problem</span>
+      <div></div>
+      <div class="cs-body">
+        <p>Most to-do apps force a choice between two bad options. One is a project-management tool with more structure than a single person managing their own day actually needs, epics, dependencies, custom fields, all of it designed for a team and none of it removable. The other is a plain list that looks simple but doesn't reliably sync between a phone and a laptop, so the version on your phone drifts out of date with the version on your laptop and you stop trusting either one. Both failure modes end the same way: people quietly fall back to the built-in notes app and lose whatever structure they'd tried to build.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">02 / The thinking</span>
+      <div></div>
+      <div class="cs-body">
+        <p>I rejected building another Todoist or Things clone with tags, projects, and filters visible from the first screen. That's solving for power users who already know they want that structure. I started instead from the smallest real unit that matters, a task with a due state, and deliberately left everything else out. Structure only got added back in where removing it caused actual, felt pain during daily use, not because a competitor had the feature. That discipline is what keeps the interface calm by default instead of dense by default, which is the entire point of the name.</p>
+        <p>The one thing I wouldn't compromise on was sync, because an app that's supposed to reduce cognitive load fails completely the moment you can't trust that checking something off on your phone actually shows it as done on your laptop five minutes later.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">03 / The business, the users, and the constraints</span>
+      <div></div>
+      <div class="cs-body">
+        <p>This is built for individuals managing one life across two or three devices, not teams, which meant there was never any pressure to bolt on collaboration, shared boards, or seat-based pricing, all of which would have compromised the calm interface the product exists to protect. A team feature is a good reason to add a settings toggle, and every settings toggle is a small tax on the calm this app is supposed to offer.</p>
+        <p>Built and maintained solo, which is why sync had to be boring and correct rather than clever: it runs on Supabase realtime instead of a custom-built sync engine, because a bespoke sync layer is exactly the kind of ambitious, fragile thing a one-person product can't afford to own long-term. It ships as an installable Progressive Web App, which means it behaves like a native app on a phone's home screen without maintaining separate iOS and Android codebases, a maintenance cost that a calm to-do list has no business carrying.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section" style="border-bottom:none;">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">04 / The outcome</span>
+      <div></div>
+      <div class="cs-body">
+        <p>Live and in daily personal use, syncing correctly across devices with no accounts required beyond the basic login needed for that sync to work at all. There's no public analytics dashboard to point to yet, so I won't dress that up as more than it is. The honest state is: shipped, working, and still the app I personally reach for first, which for something built to remove friction from a daily habit is the most meaningful test it could pass.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="next-project wrap">
+    <span class="label">Next case study</span>
+    <a href="roadmap.html"><h2>Roadmap ↗</h2></a>
+  </section>
+</main>
+
+<footer><div class="wrap foot-row"><span>© 2026 Olumide Sajowa</span><div style="display:flex;gap:20px;"><a href="https://www.linkedin.com/in/olumidesajowa" target="_blank" rel="noopener">LinkedIn</a><a href="https://x.com/smyde2" target="_blank" rel="noopener">Twitter / X</a></div><a href="../contact.html">Get in touch</a></div></footer>
+
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="../main.js"></script>
+</body>
+</html>
