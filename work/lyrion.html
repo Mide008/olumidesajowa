@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lyrion — Case Study | Olumide Sajowa</title>
+<meta name="description" content="A luxury zodiac apparel brand engineered as a full commerce ecosystem: multi-provider fulfilment, content-led acquisition, and a birth-data personalization engine.">
+<link rel="icon" href="../images/logo/mark-64.png">
+<link rel="stylesheet" href="../styles.css">
+<style>:root{ --signal:#a679e8; }</style>
+</head>
+<body>
+<div class="grid-field"></div>
+<a href="../index.html#work" class="cs-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>All work</a>
+
+<header class="site-nav">
+  <a href="../index.html" class="brand"><img src="../images/logo/mark-128.png" alt=""><span>Olumide Sajowa<small>Design Engineer</small></span></a>
+  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  <nav>
+    <a href="../index.html#work">Work</a>
+    <a href="../about.html">About</a>
+    <a href="../index.html#process">Process</a>
+    <a href="../contact.html" class="nav-cta">Start a project</a>
+    <button class="theme-toggle" aria-label="Toggle theme">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main>
+  <section class="cs-hero wrap">
+    <span class="tag"><span class="dot"></span>Case study 10 / E-commerce, client</span>
+    <h1 style="font-size:clamp(2.2rem,6.4vw,5.4rem); letter-spacing:-0.03em; line-height:0.98; margin-top:22px; max-width:18ch;">Lyrion</h1>
+    <p style="max-width:60ch; color:var(--paper-dim); font-size:17px; line-height:1.7; margin-top:24px;">A luxury zodiac-inspired apparel and ritual homeware brand, built as a full commerce ecosystem rather than a storefront: four print-on-demand providers orchestrated behind one checkout, editorial content as the acquisition engine, and a birth-data personalization tool ahead of every product page.</p>
+    <div class="cs-meta-row">
+      <div class="cs-meta">Role<b>Full-stack product architect & brand strategist</b></div>
+      <div class="cs-meta">Stack<b>Static frontend, Cloudflare Workers, Stripe</b></div>
+      <div class="cs-meta">Timeline<b>Q4 2024, ongoing</b></div>
+      <div class="cs-meta">Status<b><a href="https://lyrion.co.uk" target="_blank" rel="noopener">View live product ↗</a></b></div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">01 / The problem</span>
+      <div></div>
+      <div class="cs-body">
+        <p>The UK luxury spiritual and lifestyle market is saturated, which means differentiation has to come from brand, not from another product grid. But brand alone doesn't ship orders. The category has a second, less glamorous problem: most sellers here run print-on-demand through a single provider, and a single provider is a single point of failure, one API outage or one bad batch and every order behind it stalls. Add UK and EU data regulation, inventory that has to stay synchronized across whichever external partner actually produces the item, and the constant tension between celestial storytelling and an actual "add to bag" button, and most small operators in this space end up choosing between looking premium and running reliably. Rarely both.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">02 / The thinking</span>
+      <div></div>
+      <div class="cs-body">
+        <p>The brief I set for myself: a self-sustaining direct-to-consumer system that could scale internationally with minimal operational overhead, where brand authority and technical infrastructure work together instead of one propping up the other's weakness. I rejected a simple "shop by star sign" filter bolted onto a normal catalogue, since that treats the zodiac as a label rather than the actual reason someone would buy. I built The Oracle instead, an interactive birth-data reading that engages someone before any product is pushed at them, so personalization comes first and the product recommendation follows from it.</p>
+        <p>On the operations side, I rejected depending on one print-on-demand partner and integrated four: Printful, Gelato, Printify, and Inkthreadable, each with different strengths in geography, cost, and catalogue depth. I built automated routing logic that picks the right provider per order based on where it's shipping and what it is, with a fallback path if a provider errors out, rather than letting a single vendor's downtime become the brand's downtime.</p>
+        <p>I also treated content as the acquisition channel rather than a supporting blog. The Oracle and The Codex, an editorial arm of celestial insight and style guidance, exist specifically to build organic search authority and session time without depending on paid ad spend to bring people in.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap">
+      <span class="index">The infrastructure behind the storefront</span>
+      <div class="mod-grid" style="margin-top:20px;">
+        <div class="mod"><h4>Multi-provider fulfilment</h4><p>Printful, Gelato, Printify, and Inkthreadable, with automated routing by geography, cost, and product type, and a fallback if one errors.</p></div>
+        <div class="mod"><h4>Serverless backend</h4><p>Cloudflare Workers handle order processing and an API orchestration layer across all four providers, with Stripe triggering fulfilment automatically.</p></div>
+        <div class="mod"><h4>Catalog automation</h4><p>CSV to JSON conversion means new SKUs go live without a code change, which matters at 100+ products.</p></div>
+        <div class="mod"><h4>The Oracle</h4><p>An interactive birth-data reading that returns a cosmic signature before any product is suggested, functioning as both content and a conversion tool.</p></div>
+        <div class="mod"><h4>The Codex</h4><p>Editorial celestial insight and style guides, SEO-built to establish authority in a crowded, cynical-about-mysticism market.</p></div>
+        <div class="mod"><h4>Static frontend</h4><p>Plain HTML, CSS, and JS hosted on Netlify, chosen for load speed on a site where 65 percent of traffic is mobile.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">03 / The business and the users</span>
+      <div></div>
+      <div class="cs-body">
+        <p>The buyer here is shopping on identity and ritual as much as on garment quality, which is why product copy frames a piece like the Lunar Robe as a ritual object rather than a plain description of fabric and fit. That same buyer is unusually cynical about performative spirituality, so every celestial reference in the brand voice had to earn its place rather than lean on aesthetic mysticism with nothing behind it.</p>
+        <p>Revenue isn't limited to direct sales: the architecture was built to support B2B wholesale to boutiques, affiliate and influencer partnerships, and a future membership or subscription layer for exclusive content and early access, none of which require rebuilding the commerce core to add.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">04 / The constraints and what I learned</span>
+      <div></div>
+      <div class="cs-body">
+        <p>A static frontend paired with a serverless backend gets enterprise-level performance at startup-level infrastructure cost, but it means every integration point (Stripe, four fulfilment APIs) needs its own error handling and fallback, because the moment an order fails due to one dependency being down is the moment a customer is gone for good in a category built on trust.</p>
+        <p>The single clearest lesson from this build: infrastructure is brand in commerce. The most beautifully designed storefront fails instantly the first time an order doesn't arrive, and no amount of celestial copywriting recovers that. Customers who engaged with The Oracle converted at a noticeably higher rate than those who didn't, which told me plainly that they weren't buying apparel first, they were buying into a worldview first and the apparel followed.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section" style="border-bottom:none;">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">05 / The outcome</span>
+      <div></div>
+      <div class="cs-body">
+        <p>Live and operational, taking orders across multiple currencies with automated fulfilment routing running in production. The system was engineered as infrastructure from the start rather than decorated afterward as a storefront, which is the only reason it holds up at the order volume it's now handling.</p>
+      </div>
+      <div style="grid-column:1/-1;">
+        <div class="stat-strip" style="margin-top:8px;">
+          <div class="cell"><b>4</b><span>fulfilment providers orchestrated</span></div>
+          <div class="cell"><b>65%</b><span>of traffic is mobile</span></div>
+          <div class="cell"><b>3x</b><span>more likely to purchase after using The Oracle</span></div>
+          <div class="cell"><b>100+</b><span>SKUs supported by the catalog system</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="next-project wrap">
+    <span class="label">Next case study</span>
+    <a href="resource-bank.html"><h2>Resource Bank ↗</h2></a>
+  </section>
+</main>
+
+<footer><div class="wrap foot-row"><span>© 2026 Olumide Sajowa</span><div style="display:flex;gap:20px;"><a href="https://www.linkedin.com/in/olumidesajowa" target="_blank" rel="noopener">LinkedIn</a><a href="https://x.com/smyde2" target="_blank" rel="noopener">Twitter / X</a></div><a href="../contact.html">Get in touch</a></div></footer>
+
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="../main.js"></script>
+</body>
+</html>

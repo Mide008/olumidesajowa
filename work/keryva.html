@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keryva — Case Study | Olumide Sajowa</title>
+<meta name="description" content="How Keryva gives pastors and ministry leaders a scripture-grounded companion for sermon prep, study guides, and prayer, offline and in six languages.">
+<link rel="icon" href="../images/logo/mark-64.png">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  .lang-strip{ display:flex; flex-wrap:wrap; gap:1px; background:var(--line); border:1px solid var(--line); margin-top:10px; }
+  .lang-strip .l{ flex:1 1 140px; background:var(--ink); padding:18px 16px; }
+  .lang-strip .l b{ display:block; font-size:14px; }
+  .lang-strip .l span{ font-family:var(--font-mono); font-size:10px; color:var(--mute); }
+  .feature-alt{ display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center; padding:56px 0; border-bottom:1px solid var(--line); }
+  .feature-alt:nth-child(even){ direction:rtl; } .feature-alt:nth-child(even) > *{ direction:ltr; }
+  .feature-alt h3{ font-size:clamp(20px,2.4vw,28px); margin-bottom:12px; }
+  .feature-alt p{ color:var(--mute); font-size:14.5px; line-height:1.7; }
+  .verse-card{ border:1px solid var(--line); background:var(--ink-2); padding:30px; font-family:var(--font-display); }
+  .verse-card .ref{ font-family:var(--font-mono); font-size:11px; color:var(--signal); display:block; margin-bottom:10px; }
+  .verse-card p{ font-size:18px; line-height:1.6; color:var(--white); font-style:normal; }
+  .flow-list{ font-family:var(--font-mono); font-size:12px; color:var(--mute); display:flex; flex-direction:column; gap:0; }
+  .flow-list div{ padding:14px 0; border-bottom:1px dashed var(--line); display:flex; justify-content:space-between; }
+  @media (max-width:820px){ .feature-alt, .feature-alt:nth-child(even){ direction:ltr; grid-template-columns:1fr; padding:36px 0; } }
+</style>
+</head>
+<body>
+<div class="grid-field"></div>
+<a href="../index.html#work" class="cs-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>All work</a>
+
+<header class="site-nav">
+  <a href="../index.html" class="brand"><img src="../images/logo/mark-128.png" alt=""><span>Olumide Sajowa<small>Design Engineer</small></span></a>
+  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  <nav>
+    <a href="../index.html#work">Work</a>
+    <a href="../about.html">About</a>
+    <a href="../index.html#process">Process</a>
+    <a href="../contact.html" class="nav-cta">Start a project</a>
+    <button class="theme-toggle" aria-label="Toggle theme">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main>
+  <section class="cs-hero wrap">
+    <span class="tag"><span class="dot"></span>Case study 02 / Ministry technology</span>
+    <h1 style="font-size:clamp(2.4rem,7vw,6rem); letter-spacing:-0.03em; line-height:0.98; margin-top:22px; max-width:16ch;">Keryva</h1>
+    <p style="max-width:60ch; color:var(--paper-dim); font-size:17px; line-height:1.7; margin-top:24px;">A scripture-grounded companion for pastors and ministry leaders: sermon preparation, study guides, prayer journaling, fasting plans, and Sunday service planning, built offline-first and available in six languages including Yoruba, Igbo, and Nigerian Pidgin.</p>
+    <div class="cs-meta-row">
+      <div class="cs-meta">Role<b>Product design, AI orchestration, multilingual build</b></div>
+      <div class="cs-meta">Stack<b>React, Vite, Vercel serverless, four AI providers</b></div>
+      <div class="cs-meta">Version<b>v2.4.0, in active use</b></div>
+      <div class="cs-meta">Status<b><a href="https://keryva-new.vercel.app" target="_blank" rel="noopener">View live product ↗</a></b></div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">01 / The problem</span>
+      <div></div>
+      <div class="cs-body">
+        <p>A pastor preparing a Sunday sermon is usually doing five jobs at once: studying the text, writing the message, preparing a bulletin, answering prayer requests, and posting to the church's social pages, most of it late at night with no assistant and no research budget. Existing Bible software reads scripture well but does nothing with it. General AI tools write fast but hallucinate scripture references with total confidence, which is a serious problem when the output is going to be preached from a pulpit.</p>
+        <p class="callout">The real risk with AI and scripture isn't that it's unhelpful. It's that it's convincing and wrong, and nobody double-checks a verse reference before Sunday.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">02 / The thinking</span>
+      <div></div>
+      <div class="cs-body">
+        <p>I considered building a single AI sermon generator and stopping there. I rejected it because a sermon is the smallest part of a pastor's actual week; the study guide, the Sunday bulletin, the prayer desk, and the social content all draw from the same source material and none of the tools I looked at connected them. So the real product wasn't "AI writes your sermon," it was one workspace where a single scripture theme could become a sermon, a study guide, a bulletin, and a social post without retyping it four times.</p>
+        <p>The harder decision was translation. Yoruba, Igbo, and Pidgin are underserved in Bible software, and the honest answer for several of them is that no authorised translation exists for every book. I rejected silently falling back to machine translation. Every machine-translated passage is labelled as such in the interface, because a congregation deserves to know the difference between an authorised text and a best-effort translation.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="feature-alt reveal">
+      <div>
+        <span class="tag" style="margin-bottom:14px"><span class="dot"></span>Sermon Studio</span>
+        <h3>From a topic to a preachable draft, with a way to check every reference.</h3>
+        <p>A pastor sets topic, audience, and tone. The draft comes back with scripture woven in, each reference tappable to jump straight to the verse in their chosen translation. Preach Mode turns the finished draft into a full-screen teleprompter with a timer, so the last step before Sunday is rehearsal, not formatting.</p>
+      </div>
+      <div class="verse-card">
+        <span class="ref">JOHN 15:5 · ESV</span>
+        <p>"I am the vine; you are the branches. Whoever abides in me and I in him, he it is that bears much fruit."</p>
+      </div>
+    </div>
+
+    <div class="feature-alt reveal">
+      <div>
+        <span class="tag" style="margin-bottom:14px"><span class="dot"></span>Sunday Pack Generator</span>
+        <h3>One theme in, everything the service needs out.</h3>
+        <p>Bulletin, prayers, announcements, and the WhatsApp message that goes to the congregation, all generated from the same sermon topic and saved for reuse next time the theme returns. What used to be four separate documents written by four separate people becomes one pass.</p>
+      </div>
+      <div class="flow-list">
+        <div><span>Input</span><span>Sermon topic + scripture</span></div>
+        <div><span>Generates</span><span>Bulletin</span></div>
+        <div><span>Generates</span><span>Pastoral prayers</span></div>
+        <div><span>Generates</span><span>Announcements</span></div>
+        <div><span>Generates</span><span>WhatsApp message</span></div>
+      </div>
+    </div>
+
+    <div class="feature-alt reveal">
+      <div>
+        <span class="tag" style="margin-bottom:14px"><span class="dot"></span>Honest translation</span>
+        <h3>Six languages, and the app tells you which ones are authorised.</h3>
+        <p>Where API.Bible or Bible Brain hold an authorised edition, that's what loads. Where none exists, the app falls back to Google Translate, DeepL, or MyMemory, and says so on screen. Nigerian Pidgin gets no machine fallback at all: authorised or nothing.</p>
+      </div>
+      <div class="lang-strip">
+        <div class="l"><b>English</b><span>KJV, ESV, NIV +5</span></div>
+        <div class="l"><b>Yoruba</b><span>Authorised + fallback</span></div>
+        <div class="l"><b>Igbo</b><span>Authorised + fallback</span></div>
+        <div class="l"><b>Pidgin</b><span>Authorised only</span></div>
+        <div class="l"><b>French</b><span>Louis Segond</span></div>
+        <div class="l"><b>Spanish</b><span>Reina Valera 1960</span></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">03 / The business</span>
+      <div></div>
+      <div class="cs-body">
+        <p>Keryva is free, which was a deliberate call, not an oversight. The people it serves best, small church leaders and volunteer study group leads across Nigeria and the diaspora, are the least likely to pay a SaaS subscription for a tool this specific, and a paywall would have killed adoption before it started. The business case here isn't subscription revenue; it's a live, complex, multilingual AI product I can point to when I talk to clients about what I can build.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">04 / The users and constraints</span>
+      <div></div>
+      <div class="cs-body">
+        <p>Internet access across the user base is inconsistent, so offline was a requirement from day one, not a stretch goal: cached chapters, localStorage, and IndexedDB mean a pastor can keep working through a study guide with no signal. That constraint shaped the whole architecture before a single screen was designed, which is also why Keryva runs as a Vite-built PWA instead of a heavier framework: less to download, faster to install, and it behaves like a native app once it's on the home screen.</p>
+        <p>Running four AI providers (Gemini, Claude, Groq, OpenRouter) in a fallback chain was a direct response to one constraint: this app cannot go down on a Saturday night while someone is finishing tomorrow's sermon. If one provider is rate-limited or down, the next takes over automatically.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section" style="border-bottom:none;">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">05 / The outcome</span>
+      <div></div>
+      <div class="cs-body">
+        <p>Keryva is live at v2.4.0 with 25 plus pages covering the full ministry workflow, from Bible reading through sermon delivery through social content. I don't have adoption analytics to quote yet, since accounts and cloud sync are still on the roadmap, and I'd rather say that plainly than invent a number. What I can point to is scope and reliability: a product with a four-provider AI fallback chain and honest, labelled translation has not gone down on a pastor mid-sermon since it shipped.</p>
+      </div>
+      <div style="grid-column:1/-1;">
+        <div class="stat-strip">
+          <div class="cell"><b>25+</b><span>pages across the workflow</span></div>
+          <div class="cell"><b>6</b><span>languages, UI and Bible text</span></div>
+          <div class="cell"><b>15+</b><span>Bible translations available</span></div>
+          <div class="cell"><b>4</b><span>AI providers in fallback chain</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="next-project wrap">
+    <span class="label">Next case study</span>
+    <a href="trendova.html"><h2>Trendova ↗</h2></a>
+  </section>
+</main>
+
+<footer><div class="wrap foot-row"><span>© 2026 Olumide Sajowa</span><div style="display:flex;gap:20px;"><a href="https://www.linkedin.com/in/olumidesajowa" target="_blank" rel="noopener">LinkedIn</a><a href="https://x.com/smyde2" target="_blank" rel="noopener">Twitter / X</a></div><a href="../contact.html">Get in touch</a></div></footer>
+
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="../main.js"></script>
+</body>
+</html>

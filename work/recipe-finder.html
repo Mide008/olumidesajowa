@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recipe Finder — Case Study | Olumide Sajowa</title>
+<meta name="description" content="An offline-first, installable recipe app with meal planning and a real ingredient-scaling engine, built to take African cuisine as seriously as any other.">
+<link rel="icon" href="../images/logo/mark-64.png">
+<link rel="stylesheet" href="../styles.css">
+<style>:root{ --signal:#ff8a3d; }</style>
+</head>
+<body>
+<div class="grid-field"></div>
+<a href="../index.html#work" class="cs-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>All work</a>
+
+<header class="site-nav">
+  <a href="../index.html" class="brand"><img src="../images/logo/mark-128.png" alt=""><span>Olumide Sajowa<small>Design Engineer</small></span></a>
+  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  <nav>
+    <a href="../index.html#work">Work</a>
+    <a href="../about.html">About</a>
+    <a href="../index.html#process">Process</a>
+    <a href="../contact.html" class="nav-cta">Start a project</a>
+    <button class="theme-toggle" aria-label="Toggle theme">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main>
+  <section class="cs-hero wrap">
+    <span class="tag"><span class="dot"></span>Case study 12 / Product design</span>
+    <h1 style="font-size:clamp(2.2rem,6.4vw,5.4rem); letter-spacing:-0.03em; line-height:0.98; margin-top:22px; max-width:18ch;">Recipe Finder</h1>
+    <p style="max-width:60ch; color:var(--paper-dim); font-size:17px; line-height:1.7; margin-top:24px;">An installable, offline-first recipe app with a real meal planner, a shopping list that builds itself, and an ingredient-scaling engine that actually recalculates instead of just relabelling. Built with no accounts, no subscription, and African cuisine treated as a first-class category, not a footnote.</p>
+    <div class="cs-meta-row">
+      <div class="cs-meta">Role<b>Product architect & design engineer, solo</b></div>
+      <div class="cs-meta">Stack<b>Vanilla JS, service worker, TheMealDB API</b></div>
+      <div class="cs-meta">Timeline<b>9 weeks, concept to live deployment</b></div>
+      <div class="cs-meta">Status<b><a href="https://food-recipe-v2.vercel.app" target="_blank" rel="noopener">View live product ↗</a></b></div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">01 / The problem</span>
+      <div></div>
+      <div class="cs-body">
+        <p>Most recipe apps fall apart in exactly the environment they're meant to be used in: a kitchen. If the app depends entirely on an external API, it stops working the moment that API has a bad day. If there's no offline support, a saved recipe becomes unreachable the second the WiFi drops, which in a kitchen is often. And most of them fragment the actual job into separate tools, so searching, saving, planning the week, and building a shopping list happen in three or four different apps that don't talk to each other.</p>
+        <p class="callout">Beyond the technical fragility, most platforms treat African cuisine as an afterthought, if it appears at all, despite it being a primary cuisine for a large and actively searching diaspora audience.</p>
+        <p>Layer onto that the usual pile of ads, forced account creation, and heavy JavaScript bundles that load slowly on a phone standing next to a stove, and the result is that people spend more time fighting the app than actually cooking.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">02 / The thinking</span>
+      <div></div>
+      <div class="cs-body">
+        <p>The vision was a recipe platform that behaves like a native app, instant, offline, no barriers, so people focus on cooking instead of clicking. That meant four things were non-negotiable from the start: the app has to work with zero connectivity, it has to respect privacy with no accounts or tracking, every interaction has to feel instant rather than "loading," and the workflow has to be complete, discovery through planning through shopping, in one place rather than stitched across apps.</p>
+        <p>I rejected leaning on a single external API as the sole data source, since that makes an outage someone else's problem that becomes your outage. Instead I built a dual-source model: a local curated recipe database provides baseline functionality that works with zero network at all, and a live TheMealDB integration enriches results when the connection is available. Both get normalized into one unified format, so search and filtering behave identically regardless of where a result actually came from.</p>
+        <p>I also rejected the standard search-by-ingredient-only entry point. Regional discovery got built in as a first-class option, African cuisine sits alongside Italian and Chinese as its own explorable category, not buried under an "Other" tab, because that's a real, underserved search intent I could see myself and see reflected in how people actually search for Jollof or Egusi online.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap">
+      <span class="index">Feature depth, not feature count</span>
+      <div class="mod-grid" style="margin-top:20px;">
+        <div class="mod"><h4>Ingredient scaling engine</h4><p>Real math, not display tricks: units are preserved and converted (2 cups becomes 4 cups, not "2 cups x2"), nutrition estimates and cook time recalculate with it.</p></div>
+        <div class="mod"><h4>Meal planning</h4><p>A full seven-day grid with breakfast, lunch, and dinner slots, and a shopping list generated from the whole week in one click.</p></div>
+        <div class="mod"><h4>Shopping list</h4><p>Aggregates ingredients across recipes, tracks which recipe each item came from, and shares via the Web Share API with a clipboard fallback.</p></div>
+        <div class="mod"><h4>Voice search</h4><p>Native Web Speech API integration with a visible listening state, and a graceful fallback to text input where speech isn't supported.</p></div>
+        <div class="mod"><h4>Regional discovery</h4><p>30+ cuisine filters and 12 regional exploration cards, plus quick modes for Random, Quick Meals under 30 minutes, and Healthy.</p></div>
+        <div class="mod"><h4>Recipe detail drawer</h4><p>Hero image, a persistent ingredient checklist, a real-time serving scaler from 0.5x to 5x, and a YouTube walkthrough embed where available.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">03 / The business and the users</span>
+      <div></div>
+      <div class="cs-body">
+        <p>Built for home cooks planning a week of meals, not just looking up a single dish, which is why the meal planner and shopping list exist as core features rather than an add-on. It's also built for the privacy-conscious user who is tired of subscription fatigue and cloud dependency for something as simple as a recipe box: there are no accounts, no tracking, and no background data transmission, and every piece of state (saved recipes, the shopping list, the weekly plan, UI preferences) lives in structured localStorage on the user's own device.</p>
+        <p>That's also the business thesis. Instead of chasing recurring subscription revenue, the value proposition is that people keep what they create, with no vendor lock-in, positioned against cloud-dependent competitors that need a monthly fee to keep working.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">04 / The constraints</span>
+      <div></div>
+      <div class="cs-body">
+        <p>Shipped as an installable Progressive Web App with a full service worker strategy: pre-cached core assets for instant loads, network-first fetching with a cache fallback so a weak connection degrades gracefully instead of breaking, offline image placeholders so nothing shows a broken icon, and versioned cache cleanup so updates don't leave stale assets behind. Built entirely in vanilla JavaScript with a centralized AppState class rather than a framework, which kept the bundle light enough to install and run well on modest devices, exactly the devices most likely to be in an actual kitchen.</p>
+        <p>The honest limitations are documented rather than hidden: the image-based visual search exists in the UI but the backend analysis isn't implemented yet, and the "Trending" section currently uses randomized selection rather than real popularity data. Both are flagged as a known state, not disguised as finished features.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section" style="border-bottom:none;">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">05 / The outcome</span>
+      <div></div>
+      <div class="cs-body">
+        <p>Live and installable, meeting full PWA installability standards with 90+ Lighthouse scores across performance, accessibility, and PWA criteria. The most useful feedback I got from an early user was simply: "I forgot this was a website." That's the bar a PWA is trying to clear, and it's the reason I still think the format is one of the more underused distribution channels available to an independent builder: no app store approval, no platform revenue share, just a URL and a good service worker.</p>
+      </div>
+      <div style="grid-column:1/-1;">
+        <div class="stat-strip" style="margin-top:8px;">
+          <div class="cell"><b>90+</b><span>Lighthouse score, PWA criteria</span></div>
+          <div class="cell"><b>30+</b><span>cuisine filters, regional discovery</span></div>
+          <div class="cell"><b>9 weeks</b><span>concept to live deployment</span></div>
+          <div class="cell"><b>0</b><span>accounts or subscriptions required</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="next-project wrap">
+    <span class="label">Next case study</span>
+    <a href="ux-debt-detector.html"><h2>UX Debt Detector ↗</h2></a>
+  </section>
+</main>
+
+<footer><div class="wrap foot-row"><span>© 2026 Olumide Sajowa</span><div style="display:flex;gap:20px;"><a href="https://www.linkedin.com/in/olumidesajowa" target="_blank" rel="noopener">LinkedIn</a><a href="https://x.com/smyde2" target="_blank" rel="noopener">Twitter / X</a></div><a href="../contact.html">Get in touch</a></div></footer>
+
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="../main.js"></script>
+</body>
+</html>

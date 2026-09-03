@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RootHaus — Case Study | Olumide Sajowa</title>
+<meta name="description" content="A heritage leather goods storefront across seven currencies, built so the brand's craft story lives inside the shopping experience instead of an About page nobody reads.">
+<link rel="icon" href="../images/logo/mark-64.png">
+<link rel="stylesheet" href="../styles.css">
+<style>:root{ --signal:#c98a4b; }
+  .currency-row{ display:flex; flex-wrap:wrap; gap:1px; background:var(--line); border:1px solid var(--line); margin-top:10px; }
+  .currency-row span{ flex:1 1 90px; background:var(--ink); text-align:center; padding:14px 8px; font-family:var(--font-mono); font-size:12px; color:var(--paper-dim); }
+</style>
+</head>
+<body>
+<div class="grid-field"></div>
+<a href="../index.html#work" class="cs-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>All work</a>
+
+<header class="site-nav">
+  <a href="../index.html" class="brand"><img src="../images/logo/mark-128.png" alt=""><span>Olumide Sajowa<small>Design Engineer</small></span></a>
+  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  <nav>
+    <a href="../index.html#work">Work</a>
+    <a href="../about.html">About</a>
+    <a href="../index.html#process">Process</a>
+    <a href="../contact.html" class="nav-cta">Start a project</a>
+    <button class="theme-toggle" aria-label="Toggle theme">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main>
+  <section class="cs-hero wrap">
+    <span class="tag"><span class="dot"></span>Case study 08 / E-commerce, client</span>
+    <h1 style="font-size:clamp(2.2rem,6.4vw,5.4rem); letter-spacing:-0.03em; line-height:0.98; margin-top:22px; max-width:18ch;">RootHaus</h1>
+    <p style="max-width:60ch; color:var(--paper-dim); font-size:17px; line-height:1.7; margin-top:24px;">A heritage leather goods storefront selling across seven currencies to a global, Nigerian-heritage diaspora audience, built so the brand's craft story lives inside the shopping experience instead of an About page nobody reads before checking out.</p>
+    <div class="cs-meta-row">
+      <div class="cs-meta">Role<b>Full-stack build, brand support</b></div>
+      <div class="cs-meta">Stack<b>Multi-currency commerce, cart, restock requests</b></div>
+      <div class="cs-meta">Type<b>Client engagement</b></div>
+      <div class="cs-meta">Status<b><a href="https://the-root-haus-project.netlify.app" target="_blank" rel="noopener">View live product ↗</a></b></div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">01 / The problem</span>
+      <div></div>
+      <div class="cs-body">
+        <p>Luxury leather brands live or die on the story behind the material, the tannery, the craft, the permanence of a well-made object, and most small leather goods sellers end up on a generic commerce template that quietly undercuts exactly the premium positioning they're trying to build. The template puts the product grid first and exiles the brand story to an About page that almost nobody reads before deciding whether to buy, which means the thing that's supposed to justify a premium price never actually reaches the customer at the moment it matters.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">02 / The thinking</span>
+      <div></div>
+      <div class="cs-body">
+        <p>I rejected the standard product-grid homepage with the story tucked away elsewhere. The heritage narrative, rooted in the Iroko tree and the idea of permanence and craft, is built directly into the shopping experience itself, so a browsing customer encounters the "why" before or alongside the "what," not after they've already decided to leave.</p>
+        <p>I also rejected letting discontinued pieces simply vanish from the catalog the way most stores handle sellouts. An archive request flow lets a customer register interest in a piece that's no longer listed, which turns a dead product page into an ongoing signal of demand instead of a quiet loss, and gives the brand real data on what's worth remaking.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">03 / The business and the users</span>
+      <div></div>
+      <div class="cs-body">
+        <p>The audience is genuinely global: a Nigerian-heritage diaspora spread across markets that don't share a currency, which meant currency switching had to be immediate and visible on every page, not buried two clicks deep in a settings menu the way most storefronts treat it as an afterthought.</p>
+        <div class="currency-row"><span>USD</span><span>GBP</span><span>EUR</span><span>NGN</span><span>CAD</span><span>AUD</span><span>ZAR</span></div>
+        <p style="margin-top:20px;">The catalog itself spans four distinct categories, men, women, pets, and accessories and homewares, and the site had to hold one coherent visual system across all four without fragmenting into four different-feeling stores, which is a harder design constraint than it sounds once product photography, tone, and layout all have to flex per category while staying recognizably one brand.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section" style="border-bottom:none;">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">04 / The outcome</span>
+      <div></div>
+      <div class="cs-body">
+        <p>Live, taking orders across multiple currencies with a working cart and the archive request pipeline already collecting real interest data on discontinued pieces. The brand story is no longer competing with the checkout flow for attention, it's part of it, which is the specific problem this build set out to solve.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="next-project wrap">
+    <span class="label">Next case study</span>
+    <a href="renvia.html"><h2>Renvia IT ↗</h2></a>
+  </section>
+</main>
+
+<footer><div class="wrap foot-row"><span>© 2026 Olumide Sajowa</span><div style="display:flex;gap:20px;"><a href="https://www.linkedin.com/in/olumidesajowa" target="_blank" rel="noopener">LinkedIn</a><a href="https://x.com/smyde2" target="_blank" rel="noopener">Twitter / X</a></div><a href="../contact.html">Get in touch</a></div></footer>
+
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="../main.js"></script>
+</body>
+</html>

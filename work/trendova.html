@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trendova — Case Study | Olumide Sajowa</title>
+<meta name="description" content="How Trendova gives Nigerian cash-on-delivery sellers a real storefront and order system, built for how they already sell on WhatsApp and Instagram.">
+<link rel="icon" href="../images/logo/mark-64.png">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  .compare{ display:grid; grid-template-columns:1fr 1fr; border:1px solid var(--line); }
+  .compare .side{ padding:30px 26px; }
+  .compare .side + .side{ border-left:1px solid var(--line); }
+  .compare .side h4{ font-family:var(--font-mono); font-size:11px; letter-spacing:0.02em; margin-bottom:16px; }
+  .compare .side.before h4{ color:var(--mute); }
+  .compare .side.after h4{ color:var(--signal); }
+  .compare ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:12px; }
+  .compare li{ font-size:14px; color:var(--paper-dim); padding-left:18px; position:relative; }
+  .compare .before li::before{ content:'×'; position:absolute; left:0; color:var(--mute); }
+  .compare .after li::before{ content:'✓'; position:absolute; left:0; color:var(--signal); }
+  @media (max-width:760px){ .compare{ grid-template-columns:1fr; } .compare .side + .side{ border-left:none; border-top:1px solid var(--line); } }
+
+  .phone{ width:260px; margin:0 auto; border:1px solid var(--line-strong); border-radius:26px; padding:14px; background:var(--ink-2); }
+  .phone .screen{ border:1px solid var(--line); border-radius:14px; padding:18px 16px; background:var(--ink); }
+  .phone .price{ font-size:22px; font-weight:700; color:var(--signal); }
+  .phone .old{ font-size:12px; color:var(--mute); text-decoration:line-through; margin-left:8px; }
+  .phone .badge{ display:inline-block; font-family:var(--font-mono); font-size:9px; background:rgba(255,75,52,0.14); color:var(--signal); padding:4px 8px; border-radius:100px; margin-top:10px; }
+  .phone .field{ height:34px; border:1px solid var(--line); border-radius:6px; margin-top:10px; }
+  .phone .cta{ margin-top:14px; height:40px; border-radius:100px; background:var(--signal); }
+</style>
+</head>
+<body>
+<div class="grid-field"></div>
+<a href="../index.html#work" class="cs-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>All work</a>
+
+<header class="site-nav">
+  <a href="../index.html" class="brand"><img src="../images/logo/mark-128.png" alt=""><span>Olumide Sajowa<small>Design Engineer</small></span></a>
+  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  <nav>
+    <a href="../index.html#work">Work</a>
+    <a href="../about.html">About</a>
+    <a href="../index.html#process">Process</a>
+    <a href="../contact.html" class="nav-cta">Start a project</a>
+    <button class="theme-toggle" aria-label="Toggle theme">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main>
+  <section class="cs-hero wrap">
+    <span class="tag"><span class="dot"></span>Case study 03 / Commerce</span>
+    <h1 style="font-size:clamp(2.4rem,7vw,6rem); letter-spacing:-0.03em; line-height:0.98; margin-top:22px; max-width:16ch;">Trendova</h1>
+    <p style="max-width:60ch; color:var(--paper-dim); font-size:17px; line-height:1.7; margin-top:24px;">A cash-on-delivery storefront and order system for Nigerian sellers who currently run their entire business through WhatsApp, Instagram, and a spreadsheet. One shareable product page, one order form, and a dashboard that replaces the spreadsheet.</p>
+    <div class="cs-meta-row">
+      <div class="cs-meta">Role<b>Full-stack build, conversion design</b></div>
+      <div class="cs-meta">Stack<b>HTML, CSS, JavaScript, Supabase, Resend</b></div>
+      <div class="cs-meta">Deployment<b>Vercel, no build step</b></div>
+      <div class="cs-meta">Status<b><a href="https://trendova-newwr.vercel.app" target="_blank" rel="noopener">View live product ↗</a></b></div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">01 / The problem</span>
+      <div></div>
+      <div class="cs-body">
+        <p>Most Nigerian mini-importers and social commerce sellers run their entire operation through WhatsApp for orders, a spreadsheet for tracking, and phone calls to confirm delivery addresses. It works until it doesn't: orders get missed in the DM backlog, nobody can say what last week's revenue actually was, and every new product means rebuilding a landing page from scratch because there isn't one to reuse.</p>
+        <p class="callout">The business cost isn't the missed sale. It's the failed delivery, when a rider arrives at an address nobody actually confirmed, and the seller eats the cost both ways.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap">
+      <span class="index">02 / The thinking, as a comparison</span>
+      <div class="compare" style="margin-top:20px;">
+        <div class="side before"><h4>Before Trendova</h4>
+          <ul>
+            <li>Orders scattered across WhatsApp threads</li>
+            <li>Revenue tracked by hand in a spreadsheet</li>
+            <li>Addresses confirmed by phone call, if at all</li>
+            <li>A new landing page built from zero per product</li>
+          </ul>
+        </div>
+        <div class="side after"><h4>After Trendova</h4>
+          <ul>
+            <li>One order form, structured, saved to a database</li>
+            <li>Revenue and delivery rate on a live dashboard</li>
+            <li>State, address, and phone captured at checkout</li>
+            <li>Reusable product page, edited without code</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cs-body" style="margin-top:30px;">
+        <p>I considered building Trendova as a full e-commerce platform with accounts, carts, and online payment. I rejected that for this market: cash-on-delivery is the trust mechanism these buyers actually use, since card payment fraud fear runs high and few shoppers here trust a storefront they've never bought from before. Adding a checkout flow that assumes card payment would have solved a problem this seller doesn't have, while ignoring the one they do: turning a DM into a confirmed, trackable order.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid" style="align-items:start;">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">03 / The order flow customers actually use</span>
+      <div class="phone">
+        <div class="screen">
+          <span class="price">₦24,500<span class="old">₦32,000</span></span>
+          <div class="badge">Pay on delivery</div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="cta"></div>
+        </div>
+      </div>
+      <div class="cs-body">
+        <p>The order form asks for exactly what's needed to fulfil the order: name, phone, address, state, and quantity. No account creation, no password, no email required. A customer arriving from a Facebook or TikTok ad decides and orders in the same visit, because every extra field between a decision and a submit button is a customer who closes the tab instead.</p>
+        <p>The moment an order lands, the seller gets it on WhatsApp and by email, with the customer's details pre-filled into a click-to-chat link, so confirming the order is one tap, not a search through a DM history.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">04 / The business and the constraints</span>
+      <div></div>
+      <div class="cs-body">
+        <p>The seller this is built for isn't going to hire a developer to add their next product. So the Page Editor lets them change headline, description, price, and media themselves, and a new product page goes live without touching code or waiting on me. That single decision is the difference between a tool a seller actually keeps using and one they abandon after the first edit request.</p>
+        <p>I built it as pure HTML, CSS, and JavaScript with no framework and no build step, deliberately. It deploys to Vercel as a static site, which means zero hosting cost pressure on a seller running thin margins, and zero build pipeline that can break between me handing it over and them running it day to day.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section" style="border-bottom:none;">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">05 / The outcome</span>
+      <div></div>
+      <div class="cs-body">
+        <p>Trendova is live and client-operated, handling real orders through Supabase with automated WhatsApp and email alerts on every submission. I don't have the client's full sales figures to publish here, so I'll say what I can verify directly: failed deliveries traced back to bad address data are the specific failure mode the order form was built to close, because every field on it exists to prevent exactly that call from a rider standing at the wrong door.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="next-project wrap">
+    <span class="label">Next case study</span>
+    <a href="calmdo.html"><h2>Calmdo ↗</h2></a>
+  </section>
+</main>
+
+<footer><div class="wrap foot-row"><span>© 2026 Olumide Sajowa</span><div style="display:flex;gap:20px;"><a href="https://www.linkedin.com/in/olumidesajowa" target="_blank" rel="noopener">LinkedIn</a><a href="https://x.com/smyde2" target="_blank" rel="noopener">Twitter / X</a></div><a href="../contact.html">Get in touch</a></div></footer>
+
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="../main.js"></script>
+</body>
+</html>

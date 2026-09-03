@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UX Debt Detector — Case Study | Olumide Sajowa</title>
+<meta name="description" content="A live web application that scores UX debt and turns it into a dollar figure and a prioritized fix list, in under ten seconds.">
+<link rel="icon" href="../images/logo/mark-64.png">
+<link rel="stylesheet" href="../styles.css">
+<style>:root{ --signal:#5b8cff; }
+  .pricing-strip{ display:grid; grid-template-columns:repeat(3,1fr); border:1px solid var(--line); margin-top:8px; }
+  .pricing-strip .p{ padding:24px 22px; border-right:1px solid var(--line); }
+  .pricing-strip .p:last-child{ border-right:none; }
+  .pricing-strip .p b{ display:block; font-size:26px; margin-bottom:4px; }
+  .pricing-strip .p span{ font-family:var(--font-mono); font-size:11px; color:var(--mute); display:block; }
+  .pricing-strip .p small{ font-family:var(--font-mono); font-size:11px; color:var(--paper-dim); display:block; margin-top:10px; line-height:1.5; }
+  @media (max-width:700px){ .pricing-strip{ grid-template-columns:1fr; } .pricing-strip .p{ border-right:none; border-bottom:1px solid var(--line); } }
+</style>
+</head>
+<body>
+<div class="grid-field"></div>
+<a href="../index.html#work" class="cs-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>All work</a>
+
+<header class="site-nav">
+  <a href="../index.html" class="brand"><img src="../images/logo/mark-128.png" alt=""><span>Olumide Sajowa<small>Design Engineer</small></span></a>
+  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  <nav>
+    <a href="../index.html#work">Work</a>
+    <a href="../about.html">About</a>
+    <a href="../index.html#process">Process</a>
+    <a href="../contact.html" class="nav-cta">Start a project</a>
+    <button class="theme-toggle" aria-label="Toggle theme">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main>
+  <section class="cs-hero wrap">
+    <span class="tag"><span class="dot"></span>Case study 13 / Own SaaS product</span>
+    <h1 style="font-size:clamp(2.2rem,6.4vw,5.4rem); letter-spacing:-0.03em; line-height:0.98; margin-top:22px; max-width:18ch;">UX Debt Detector</h1>
+    <p style="max-width:60ch; color:var(--paper-dim); font-size:17px; line-height:1.7; margin-top:24px;">A web application that scores a product's UX debt and hands back a prioritized, dollar-weighted fix list in under ten seconds, built to replace the slow, subjective, expensive audit most teams either skip or outsource.</p>
+    <div class="cs-meta-row">
+      <div class="cs-meta">Role<b>Product design & engineering, solo</b></div>
+      <div class="cs-meta">Stack<b>HTML, CSS, JS, Netlify serverless functions</b></div>
+      <div class="cs-meta">Timeline<b>6 weeks, concept to live deployment</b></div>
+      <div class="cs-meta">Status<b><a href="https://ux-debt-detector-quwt.vercel.app" target="_blank" rel="noopener">View live product ↗</a></b></div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">01 / The problem</span>
+      <div></div>
+      <div class="cs-body">
+        <p>A UX audit is supposed to be the thing that catches expensive mistakes before they ship. In practice it rarely works that way. A proper manual audit takes weeks, which means the team has usually already built on top of the problem by the time the report lands. The findings depend heavily on which consultant you hired and what they happened to notice that week, so two audits of the same product can disagree with each other. And the output is almost always a long document full of "nice to haves" with no ranking, so a founder reads it once, nods, and files it away.</p>
+        <p class="callout">The real cost isn't the audit fee. It's that nobody can put a number on what bad UX is actually doing to conversion, so it never wins the argument against a new feature.</p>
+        <p>The pattern I kept seeing: teams miss critical usability problems until after launch, spend effort on low-impact polish because nothing tells them otherwise, and have no shared language to even discuss UX health with a non-designer stakeholder. Poor UX quietly drives churn and support costs the whole time, and almost nobody is tracking it as a number that moves.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">02 / The thinking</span>
+      <div></div>
+      <div class="cs-body">
+        <p>The guiding idea was blunt: make UX evaluation as fast, objective, and routine as running a linter on code, so a team can check their work without waiting on a consultant's calendar. That meant every design decision got tested against four principles: speed first, since value has to land in seconds, not days; objectivity, using measurable criteria to cut down on personal bias; clarity, so the output speaks to a business stakeholder as easily as a designer; and actionability, meaning every single finding ships with a concrete next step, not just a diagnosis.</p>
+        <p>I rejected building a subjective checklist tool that just restates Nielsen's heuristics with a checkbox next to each one. That's what most audit templates already are, and it's exactly the "opinion, not evidence" problem I was trying to remove. Instead, every issue gets scored on two independent axes, severity (critical, major, minor) and effort (low, medium, high), and those combine into a single weighted UX Debt Score a team can track over time the same way they'd track technical debt in a codebase.</p>
+        <p>I also decided early that this had to be monetization-ready from day one, not an eventual concern bolted on later. That single decision changed how the architecture was structured: clean separation between the analysis engine and the presentation layer, so authentication, storage, and billing could be added without a rewrite.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap">
+      <span class="index">How it works, and who it's for</span>
+      <div class="mod-grid" style="margin-top:20px;">
+        <div class="mod"><h4>Submit</h4><p>A URL or a design file goes in. No account required to get a first result.</p></div>
+        <div class="mod"><h4>Analyze</h4><p>A rules-based engine combined with heuristic evaluation patterns checks navigation, clarity, feedback, consistency, accessibility, and performance.</p></div>
+        <div class="mod"><h4>Score</h4><p>A severity-weighted scorecard comes back in under ten seconds, prioritized, not just listed.</p></div>
+        <div class="mod"><h4>Export</h4><p>A one-page executive summary for stakeholders, plus a detailed technical appendix for the people who'll actually fix it.</p></div>
+        <div class="mod"><h4>Product managers</h4><p>Get a stakeholder-ready report without commissioning a consultant.</p></div>
+        <div class="mod"><h4>Designers & developers</h4><p>Get specific, implementable recommendations instead of vague critique.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">03 / The business and the users</span>
+      <div></div>
+      <div class="cs-body">
+        <p>Priced across three tiers aimed at three different buying moments rather than one generic audit for everyone. A founder who wants a fast gut-check before a pitch reaches for the quick scan. A team preparing an actual redesign needs the deep audit, which comes with Figma-ready mockups attached to the findings, not just a description of what to change. And a startup heading into investor due diligence needs the pre-funding assessment, because "we've had our UX independently reviewed" is a real answer to give a VC's product partner.</p>
+        <div class="pricing-strip">
+          <div class="p"><b>$147</b><span>Quick scan</span><small>Fast gut-check, core findings, no mockups</small></div>
+          <div class="p"><b>$797</b><span>Deep audit</span><small>Full scorecard plus Figma-ready fix mockups</small></div>
+          <div class="p"><b>$2,497</b><span>Pre-funding assessment</span><small>Due-diligence-grade report for investor conversations</small></div>
+        </div>
+        <p style="margin-top:20px;">The target market is SMEs and startups with no in-house UX headcount, digital agencies that need fast, repeatable audits across many clients, and larger teams that want a consistent evaluation standard across several products at once. None of them are well served by hiring a $15,000 consultancy for something that should take minutes to get a first read on.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">04 / The constraints</span>
+      <div></div>
+      <div class="cs-body">
+        <p>Built entirely with HTML, CSS, and JavaScript, no heavy framework, which keeps the bundle light and the tool fast on the exact kind of underpowered connection a real audit target might be running on. The backend runs as serverless functions rather than a persistent server, and there's deliberately no database at launch: sessions are ephemeral, which keeps infrastructure cost close to zero and sidesteps a whole category of data-handling risk before the product has proven it needs to store anything long-term.</p>
+        <p>Output had to be usable by an engineering team immediately, not just readable by a designer, which is why every finding is formatted as a specific, implementable fix rather than a narrative paragraph. All inputs are sanitized, no personal data is stored, and HTTPS is enforced throughout, since a tool that audits other people's products has to hold itself to the standard it's checking for.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section" style="border-bottom:none;">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">05 / The outcome</span>
+      <div></div>
+      <div class="cs-body">
+        <p>Live, production-ready, and monetization-ready from a six-week build. Early users reported coming back to it weekly to validate design decisions before shipping them, which is the exact behavior the "linting for UX" framing was aiming for. The architecture separating analysis from presentation means user accounts, Figma and Jira integrations, and industry benchmarking can all be added later without redoing the core.</p>
+        <p>The clearest thing this project proved to me: product teams don't need more opinions, they need a structured, objective framework that makes the next step obvious. Speed and clarity turned out to be features in their own right, not trade-offs against depth.</p>
+      </div>
+      <div style="grid-column:1/-1;">
+        <div class="stat-strip" style="margin-top:8px;">
+          <div class="cell"><b>&lt;10s</b><span>time to a full scorecard</span></div>
+          <div class="cell"><b>6 weeks</b><span>concept to live deployment</span></div>
+          <div class="cell"><b>3</b><span>independent pricing tiers</span></div>
+          <div class="cell"><b>Solo</b><span>design and engineering</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="next-project wrap">
+    <span class="label">Next case study</span>
+    <a href="posecraft.html"><h2>PoseCraft ↗</h2></a>
+  </section>
+</main>
+
+<footer><div class="wrap foot-row"><span>© 2026 Olumide Sajowa</span><div style="display:flex;gap:20px;"><a href="https://www.linkedin.com/in/olumidesajowa" target="_blank" rel="noopener">LinkedIn</a><a href="https://x.com/smyde2" target="_blank" rel="noopener">Twitter / X</a></div><a href="../contact.html">Get in touch</a></div></footer>
+
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="../main.js"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WorkPulse — Case Study | Olumide Sajowa</title>
+<meta name="description" content="How WorkPulse consolidates tasks, projects, CRM, HR, and AI agents into one team operating system, and why fragmentation was the real problem to solve.">
+<link rel="icon" href="../images/logo/mark-64.png">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  .os-diagram{ display:grid; grid-template-columns:repeat(6,1fr); grid-template-rows:repeat(4,54px); gap:1px; background:var(--line); border:1px solid var(--line); }
+  .os-diagram .cell{ background:var(--ink); display:flex; align-items:center; justify-content:center; font-family:var(--font-mono); font-size:10px; color:var(--mute); text-align:center; padding:6px; }
+  .os-diagram .cell.on{ background:rgba(255,75,52,0.08); color:var(--white); }
+  .agent-row{ display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line); margin-top:1px; }
+  .agent-row .a{ background:var(--ink); padding:20px 16px; }
+  .agent-row .a b{ display:block; font-size:14px; margin-bottom:6px; }
+  .agent-row .a span{ font-family:var(--font-mono); font-size:11px; color:var(--mute); }
+  @media (max-width:760px){ .os-diagram{ grid-template-columns:repeat(3,1fr); grid-template-rows:repeat(8,54px);} .agent-row{ grid-template-columns:1fr 1fr; } }
+</style>
+</head>
+<body>
+<div class="grid-field"></div>
+
+<a href="../index.html#work" class="cs-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>All work</a>
+
+<header class="site-nav">
+  <a href="../index.html" class="brand"><img src="../images/logo/mark-128.png" alt=""><span>Olumide Sajowa<small>Design Engineer</small></span></a>
+  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  <nav>
+    <a href="../index.html#work">Work</a>
+    <a href="../about.html">About</a>
+    <a href="../index.html#process">Process</a>
+    <a href="../contact.html" class="nav-cta">Start a project</a>
+    <button class="theme-toggle" aria-label="Toggle theme">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main>
+  <section class="cs-hero wrap">
+    <span class="tag"><span class="dot"></span>Case study 01 / Team software</span>
+    <h1 style="font-size:clamp(2.4rem,7vw,6rem); letter-spacing:-0.03em; line-height:0.98; margin-top:22px; max-width:16ch;">WorkPulse</h1>
+    <p style="max-width:60ch; color:var(--paper-dim); font-size:17px; line-height:1.7; margin-top:24px;">A team operating system that replaces the six tools a growing company usually stitches together to run itself: tasks, projects, goals, CRM, analytics, and HR, plus AI agents that watch the work and escalate what a manager would otherwise miss.</p>
+    <div class="cs-meta-row">
+      <div class="cs-meta">Role<b>Full-stack build, product design, AI agent architecture</b></div>
+      <div class="cs-meta">Stack<b>Next.js, TypeScript, Supabase, Postgres, Groq / Gemini</b></div>
+      <div class="cs-meta">Timeline<b>2025 to 2026, in active production</b></div>
+      <div class="cs-meta">Status<b><a href="https://workpulse-web-ten.vercel.app" target="_blank" rel="noopener">View live product ↗</a></b></div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">01 / The problem</span>
+      <div></div>
+      <div class="cs-body">
+        <p>Every growing team hits the same wall. Tasks live in one app, sprint tracking in another, the CRM somewhere else, HR and leave requests in a spreadsheet, and performance reviews in whatever the manager remembers from Slack. Nobody owns the full picture, so managers spend their week reconstructing status instead of unblocking people.</p>
+        <p class="callout">The expensive part isn't the six subscriptions. It's that nothing in any of those tools talks to the others, so blockers sit unnoticed until they've already cost a deadline.</p>
+        <p>I'd watched this happen inside two client engagements before I built WorkPulse: a blocked task would sit for four days because the person who needed to know wasn't looking at that board that week. That's not a tooling gap. It's a visibility gap, and visibility gaps are a design problem before they're an engineering one.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">02 / The thinking</span>
+      <div></div>
+      <div class="cs-body">
+        <p>The obvious move is to clone Asana or ClickUp and add a chatbot. I rejected that early. Startups already resent paying for six tools; giving them a seventh generalist tool with an AI label on it solves nothing. The actual opportunity was consolidation with judgment built in, not another list-of-lists.</p>
+        <p>I also considered building WorkPulse as a set of integrations that sat on top of a team's existing stack (Asana plus Slack plus HubSpot, wired together). I rejected that too: integrations break the moment any partner changes their API, and I'd be shipping fragility as a feature. A single data model, owned end to end, was slower to build and far more durable.</p>
+        <p>The one idea I kept from the chatbot instinct was agents, but reframed: not something you talk to, something that watches the data and acts. A blocker sitting for 48 hours should escalate itself. A goal falling behind its trajectory should flag itself on Sunday, before Monday's planning meeting, not after.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">03 / The business</span>
+      <div></div>
+      <div class="cs-body">
+        <p>WorkPulse had to work as a business, not just as software. Startups and small teams (five to fifty people) are price-sensitive and will not pay enterprise rates for a tool they're not sure they'll still use in six months, so a genuinely usable free tier was non-negotiable, with the upgrade path sitting behind CRM, advanced analytics, and enterprise permissions rather than behind basic task management.</p>
+        <p>Agencies and consultancies needed client project tracking and a CRM in the same place they track their own delivery work, so I built both into the core product instead of treating CRM as a bolt-on module. And because a meaningful share of the market I know best is African and remote-first, WhatsApp notification support and offline-friendly PWA behaviour weren't nice-to-haves, they were the difference between a tool that gets adopted and one that gets abandoned after week two.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">04 / The users</span>
+      <div></div>
+      <div class="cs-body">
+        <p>Four roles use WorkPulse differently, and the interface has to respect that instead of showing everyone the same dashboard. An executive wants a KPI score and an audit trail. A manager wants to know what's blocked and who's overloaded. A team lead wants their board. Staff want to open the app, see three things that matter today, and get back to work.</p>
+        <p>That's why the dashboard leads with a completion rate and stat cards before it shows a single task list, and why permissions are role-based rather than a single flat view with everything visible to everyone. Watching people status-update by hand in Slack was the clearest signal that the daily digest agent needed to exist: it's the report a manager was already writing themselves, just automated and delivered before their first coffee.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap">
+      <span class="index">System map / 15 modules, one data layer</span>
+      <p style="color:var(--mute); font-size:14px; max-width:60ch; margin-bottom:24px;">Illustrative module map, not a screenshot. Every module below reads and writes the same workspace-scoped data, which is what makes the AI agents possible in the first place.</p>
+      <div class="os-diagram">
+        <div class="cell on">Tasks</div><div class="cell on">Projects</div><div class="cell on">Goals</div><div class="cell on">CRM</div><div class="cell on">Analytics</div><div class="cell on">Team</div>
+        <div class="cell on">HR</div><div class="cell on">Agents</div><div class="cell">Settings</div><div class="cell">Audit</div><div class="cell">Search</div><div class="cell">Chat</div>
+        <div class="cell">API keys</div><div class="cell">Webhooks</div><div class="cell">Slack</div><div class="cell">MCP server</div><div class="cell">Notifications</div><div class="cell">Billing</div>
+        <div class="cell" style="grid-column:1/-1; color:var(--signal);">Single Postgres schema, workspace-scoped, row-level security on every table</div>
+      </div>
+
+      <div class="agent-row">
+        <div class="a"><b>Daily digest</b><span>7am · manager briefing</span></div>
+        <div class="a"><b>Blocker escalation</b><span>every 6h · 48h+ blocked</span></div>
+        <div class="a"><b>Goal risk detection</b><span>Sunday · behind trajectory</span></div>
+        <div class="a"><b>Weekly pulse</b><span>Friday · performance note</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">05 / The constraints</span>
+      <div></div>
+      <div class="cs-body">
+        <p>This was built and shipped by one person, which set the real limits. Every feature had to justify its maintenance cost, not just its build cost, so I chose Supabase over a custom backend specifically to avoid owning auth, storage, and realtime infrastructure myself. AI calls run through Groq first for speed and fall back to Gemini, because a single-provider dependency is a business risk I wasn't willing to carry into a product with paying customers.</p>
+        <p>Row-level security had to be correct on the first pass, not patched in later, because retrofitting workspace isolation into a live multi-tenant product is one of the more dangerous refactors in software. That constraint shaped the schema before a single screen was designed.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section" style="border-bottom:none;">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">06 / The outcome</span>
+      <div></div>
+      <div class="cs-body">
+        <p>WorkPulse is in production on Vercel with a Supabase backend, and it's the platform I now use to run my own client work, which is its own kind of proof. I haven't run a formal customer study yet, so I won't dress up a usage number as market validation. What I can state plainly: the build itself reached a scope most teams would staff with three or four engineers, shipped by one.</p>
+      </div>
+      <div style="grid-column:1/-1;">
+        <div class="stat-strip" style="margin-top:8px;">
+          <div class="cell"><b>73+</b><span>dynamic routes shipped</span></div>
+          <div class="cell"><b>40+</b><span>API endpoints in production</span></div>
+          <div class="cell"><b>20+</b><span>database tables, RLS on all</span></div>
+          <div class="cell"><b>4</b><span>autonomous AI agents live</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="next-project wrap">
+    <span class="label">Next case study</span>
+    <a href="keryva.html"><h2>Keryva ↗</h2></a>
+  </section>
+</main>
+
+<footer><div class="wrap foot-row"><span>© 2026 Olumide Sajowa</span><div style="display:flex;gap:20px;"><a href="https://www.linkedin.com/in/olumidesajowa" target="_blank" rel="noopener">LinkedIn</a><a href="https://x.com/smyde2" target="_blank" rel="noopener">Twitter / X</a></div><a href="../contact.html">Get in touch</a></div></footer>
+
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="../main.js"></script>
+</body>
+</html>

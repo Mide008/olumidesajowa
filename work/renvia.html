@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Renvia IT — Case Study | Olumide Sajowa</title>
+<meta name="description" content="A dual-audience digital platform for a UK IT recycling firm, built to automate booking, prove environmental impact with real numbers, and serve corporate and individual users without fragmenting.">
+<link rel="icon" href="../images/logo/mark-64.png">
+<link rel="stylesheet" href="../styles.css">
+<style>:root{ --signal:#5fb37a; }</style>
+</head>
+<body>
+<div class="grid-field"></div>
+<a href="../index.html#work" class="cs-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>All work</a>
+
+<header class="site-nav">
+  <a href="../index.html" class="brand"><img src="../images/logo/mark-128.png" alt=""><span>Olumide Sajowa<small>Design Engineer</small></span></a>
+  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  <nav>
+    <a href="../index.html#work">Work</a>
+    <a href="../about.html">About</a>
+    <a href="../index.html#process">Process</a>
+    <a href="../contact.html" class="nav-cta">Start a project</a>
+    <button class="theme-toggle" aria-label="Toggle theme">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main>
+  <section class="cs-hero wrap">
+    <span class="tag"><span class="dot"></span>Case study 09 / B2B service, client</span>
+    <h1 style="font-size:clamp(2.2rem,6.4vw,5.4rem); letter-spacing:-0.03em; line-height:0.98; margin-top:22px; max-width:18ch;">Renvia IT</h1>
+    <p style="max-width:60ch; color:var(--paper-dim); font-size:17px; line-height:1.7; margin-top:24px;">A production-ready digital platform for a UK IT recycling and asset disposal firm, built to replace phone-call bookings with an automated workflow, and to prove environmental impact with real numbers instead of vague sustainability language.</p>
+    <div class="cs-meta-row">
+      <div class="cs-meta">Role<b>Full-stack developer & product designer, solo-led</b></div>
+      <div class="cs-meta">Stack<b>HTML5, CSS3, vanilla JS, PWA-ready</b></div>
+      <div class="cs-meta">Timeline<b>Q1 to Q3 2025</b></div>
+      <div class="cs-meta">Status<b><a href="https://renviait.co.uk" target="_blank" rel="noopener">View live product ↗</a></b></div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">01 / The problem</span>
+      <div></div>
+      <div class="cs-body">
+        <p>Renvia needed more than a website. Before this build, the business ran on manual processes: phone calls to arrange a collection, spreadsheets to track what had come in, and no structured way to show a customer what actually happened to their equipment afterward. That's a real liability in this industry specifically, because a business asking companies to hand over old laptops and servers for destruction is really asking to be trusted with their data, and vague claims of "we recycle responsibly" don't establish that trust on their own.</p>
+        <p class="callout">The sector's second problem is audience split: a corporate IT manager needs compliance documentation and bulk booking, while an individual just wants to drop off an old phone without wading through enterprise language built for someone else.</p>
+        <p>Add UK regulatory requirements around GDPR and secure data destruction, and a stated plan to eventually launch an asset recovery marketplace, and the brief was clearly for a scalable system, not a brochure that would need a rebuild the moment the business added its next capability.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">02 / The thinking</span>
+      <div></div>
+      <div class="cs-body">
+        <p>I rejected leading with pricing or a generic three-icon "how it works" section, which is what most competitors in this space default to. Trust in this category gets earned through specifics, so the site leads with the compliance credentials that actually matter to a buyer's own compliance team: ISO 14001, ISO 27001, and Environment Agency licensing, stated plainly rather than implied.</p>
+        <p>I rejected treating environmental impact as marketing copy. A live calculator translates a collection into concrete figures, CO2 saved, kilograms diverted from landfill, expressed with equivalence indicators a non-technical reader immediately understands, because "we're sustainable" convinces nobody, and a number does.</p>
+        <p>For the audience split, I rejected trying to serve both corporate and individual users through one shared interface with optional fields. Instead the two flows are architecturally separate from the start, corporate booking assumes bulk equipment and asks for compliance documentation upfront, individual booking stays to the minimum fields needed to arrange a single collection, and the platform is structured so a backend can eventually apply proper role-based access without redesigning either flow.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap">
+      <span class="index">What the platform actually does</span>
+      <div class="mod-grid" style="margin-top:20px;">
+        <div class="mod"><h4>Booking system</h4><p>Equipment selection, scheduling, a choice between data wiping or physical destruction, and a tracked confirmation, replacing what used to be a phone call and a spreadsheet entry.</p></div>
+        <div class="mod"><h4>Impact calculator</h4><p>Real-time CO2 savings and landfill diversion figures, with equivalence comparisons that make an abstract number concrete.</p></div>
+        <div class="mod"><h4>User dashboard</h4><p>Booking history, cumulative environmental impact over time, and account preferences in one place.</p></div>
+        <div class="mod"><h4>Donation portal</h4><p>A distinct CSR workflow for corporate and individual device donations, generating ESG-ready impact reporting for a stakeholder audience.</p></div>
+        <div class="mod"><h4>Authentication layer</h4><p>Secure sign-up and role-based views for B2B versus B2C, built to connect to enterprise SSO later without a rebuild.</p></div>
+        <div class="mod"><h4>PWA-ready architecture</h4><p>Installable, offline-aware, and built with structured state persistence so a multi-step booking survives an interrupted session.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">03 / The business, the users, and the constraints</span>
+      <div></div>
+      <div class="cs-body">
+        <p>The service itself is free to the customer, which had to be communicated without looking low-budget, since undervaluing the presentation would quietly undercut the compliance-grade positioning the rest of the site works to build. "Free collection" and "full documentation provided" needed to be impossible to miss on the first screen, not buried three clicks into an FAQ, because that's the specific reassurance an IT manager is scanning for.</p>
+        <p>Technically, the entire frontend is HTML5, CSS3, and vanilla JavaScript with no framework, structured deliberately so a real backend (Node, Firebase, or Supabase) can be added later without an architectural rewrite. Client-side validation and controlled error handling were treated as production requirements from day one, not polish added at the end, since a multi-step booking form that fails silently is worse than the phone call it replaced.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section" style="border-bottom:none;">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">04 / The outcome</span>
+      <div></div>
+      <div class="cs-body">
+        <p>Live, taking real collection bookings directly through the platform, with recycling and CO2 impact metrics presented as ongoing, visible proof rather than a one-time claim on an About page. The clearest lesson from this build: sustainable businesses need digital infrastructure, not decoration. The most effective environmental platforms don't just state their impact, they make it measurable, visible, and personal to whoever's looking at it, and that discipline of proof, not adjectives, is what actually earns trust in a sector this skeptical of vague claims.</p>
+      </div>
+      <div style="grid-column:1/-1;">
+        <div class="stat-strip" style="margin-top:8px;">
+          <div class="cell"><b>500+</b><span>tonnes recycled, stated on site</span></div>
+          <div class="cell"><b>1,200+</b><span>businesses served, stated on site</span></div>
+          <div class="cell"><b>98%</b><span>landfill diversion rate</span></div>
+          <div class="cell"><b>2</b><span>ISO certifications led with</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="next-project wrap">
+    <span class="label">Next case study</span>
+    <a href="lyrion.html"><h2>Lyrion ↗</h2></a>
+  </section>
+</main>
+
+<footer><div class="wrap foot-row"><span>© 2026 Olumide Sajowa</span><div style="display:flex;gap:20px;"><a href="https://www.linkedin.com/in/olumidesajowa" target="_blank" rel="noopener">LinkedIn</a><a href="https://x.com/smyde2" target="_blank" rel="noopener">Twitter / X</a></div><a href="../contact.html">Get in touch</a></div></footer>
+
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="../main.js"></script>
+</body>
+</html>

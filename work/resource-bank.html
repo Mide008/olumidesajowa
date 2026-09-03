@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resource Bank — Case Study | Olumide Sajowa</title>
+<meta name="description" content="A local-first research library that turns bookmarks into structured, searchable research assets, with no accounts, no cloud, and no subscription.">
+<link rel="icon" href="../images/logo/mark-64.png">
+<link rel="stylesheet" href="../styles.css">
+<style>:root{ --signal:#4fb0d6; }
+  .compare-table{ width:100%; border-collapse:collapse; margin-top:8px; font-size:14px; }
+  .compare-table th, .compare-table td{ text-align:left; padding:12px 14px; border-bottom:1px solid var(--line); }
+  .compare-table th{ font-family:var(--font-mono); font-size:11px; color:var(--mute); font-weight:500; }
+  .compare-table td.yes{ color:var(--signal); }
+  .compare-table td.no{ color:var(--mute-dim); }
+</style>
+</head>
+<body>
+<div class="grid-field"></div>
+<a href="../index.html#work" class="cs-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>All work</a>
+
+<header class="site-nav">
+  <a href="../index.html" class="brand"><img src="../images/logo/mark-128.png" alt=""><span>Olumide Sajowa<small>Design Engineer</small></span></a>
+  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  <nav>
+    <a href="../index.html#work">Work</a>
+    <a href="../about.html">About</a>
+    <a href="../index.html#process">Process</a>
+    <a href="../contact.html" class="nav-cta">Start a project</a>
+    <button class="theme-toggle" aria-label="Toggle theme">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main>
+  <section class="cs-hero wrap">
+    <span class="tag"><span class="dot"></span>Case study 11 / Product design</span>
+    <h1 style="font-size:clamp(2.2rem,6.4vw,5.4rem); letter-spacing:-0.03em; line-height:0.98; margin-top:22px; max-width:18ch;">Resource Bank</h1>
+    <p style="max-width:60ch; color:var(--paper-dim); font-size:17px; line-height:1.7; margin-top:24px;">A structured personal research library, not a read-later app and not a cloud SaaS clone. Save links with real metadata and tags, search instantly, export the whole library as JSON, all stored locally with no account and no subscription.</p>
+    <div class="cs-meta-row">
+      <div class="cs-meta">Role<b>Product architect & design engineer, solo</b></div>
+      <div class="cs-meta">Stack<b>Vanilla JS, structured localStorage, PWA-ready</b></div>
+      <div class="cs-meta">Timeline<b>6 weeks, concept to live deployment</b></div>
+      <div class="cs-meta">Status<b><a href="https://research-library-blush.vercel.app" target="_blank" rel="noopener">View live product ↗</a></b></div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">01 / The problem</span>
+      <div></div>
+      <div class="cs-body">
+        <p>Before I built this, I ran a short study with nine working professionals, designers, engineers, and researchers, about how they actually manage the links, references, and inspiration they collect. Eighty three percent said they relied on manual tagging as their main system. Sixty seven percent said they had lost track of a resource they knew they'd saved somewhere and simply couldn't find it again. That's not a minor inconvenience, that's a research workflow quietly failing most of the time.</p>
+        <p class="callout">Browser bookmarks have no metadata and no real search. Cloud tools like Notion or Raindrop solve that, but they come with a monthly fee and your data sitting on someone else's server.</p>
+        <p>The people I talked to weren't looking for more features. They were tired of the trade-off itself: either a flat, dumb bookmark list they own outright, or a capable tool they're renting and can lose access to the day they stop paying.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">02 / The thinking</span>
+      <div></div>
+      <div class="cs-body">
+        <p>The research pointed at manual tagging as the exact habit people were already abandoning, so I rejected making tagging the primary system and leaning on it more. Instead the entry point is automatic metadata extraction: paste a URL and the title, description, and favicon populate themselves, with smart tag suggestions layered on top rather than required upfront.</p>
+        <p>I also rejected requiring that automation, since the same research told me some of these professionals don't trust an automatic system with their reference library. So the design followed a progressive enhancement approach on purpose: manual entry works completely on its own, full stop, and automatic extraction sits on top of it as a convenience, never a dependency.</p>
+        <p>The core architectural decision was local-first, always, treating data sovereignty as a design value rather than a technical detail. No accounts, no cloud sync, no background analytics. Search and filtering had to execute in under fifty milliseconds, because a research tool that makes you wait to find something you already saved has failed at the one job it exists to do.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap">
+      <span class="index">How it compares to the obvious alternatives</span>
+      <table class="compare-table">
+        <tr><th>Feature</th><th>Browser bookmarks</th><th>Raindrop / Notion</th><th>Resource Bank</th></tr>
+        <tr><td>Rich metadata</td><td class="no">No</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+        <tr><td>Structured tagging</td><td class="no">No</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+        <tr><td>Full-text search</td><td class="no">No</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+        <tr><td>No subscription</td><td class="yes">Yes</td><td class="no">No</td><td class="yes">Yes</td></tr>
+        <tr><td>No vendor lock-in</td><td class="yes">Yes</td><td class="no">No</td><td class="yes">Yes</td></tr>
+        <tr><td>Privacy-first, no tracking</td><td class="yes">Yes</td><td class="no">No</td><td class="yes">Yes</td></tr>
+      </table>
+      <p style="color:var(--mute); font-size:13.5px; margin-top:16px; max-width:60ch;">The trade-off is intentional: no cloud sync across devices. This is built for people who'll take speed, privacy, and ownership over that convenience.</p>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">03 / The business and the users</span>
+      <div></div>
+      <div class="cs-body">
+        <p>Built for individual professionals rather than teams: freelancers juggling multiple clients, researchers organizing papers, designers curating inspiration and UI patterns, developers saving documentation. Every one of them has the same underlying complaint, that their current system either does too little or costs too much for what is fundamentally personal organization.</p>
+        <p>The business thesis mirrors Recipe Finder's: no subscription fatigue, a free tier that's actually complete rather than a crippled trial, with any future premium tier (cloud sync, team sharing) sitting strictly on top of a product that already works fully without it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">04 / The constraints</span>
+      <div></div>
+      <div class="cs-body">
+        <p>Zero external dependencies, built entirely in vanilla JavaScript with a structured localStorage layer that includes autosave, an undo history, and error recovery, so a browser crash doesn't cost someone their library. Full import and export as JSON was treated as a feature, not an escape hatch, since portability is what actually earns the trust needed to get someone to store something as personally valuable as their research library outside the cloud.</p>
+        <p>Accessibility wasn't an afterthought either: keyboard shortcuts for search, new entries, and closing modals, WCAG AA color contrast, and proper ARIA labelling throughout, since a tool for knowledge workers has to work for knowledge workers who navigate by keyboard.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section" style="border-bottom:none;">
+    <div class="wrap cs-grid">
+      <span class="index" style="grid-column:1/-1; margin-bottom:-6px;">05 / The outcome</span>
+      <div></div>
+      <div class="cs-body">
+        <p>Live, fast, and privacy-first, with multiple export formats and a search that stays under its fifty-millisecond target even with a large library. The moment I knew the product had landed: when I told an early user cloud sync wasn't coming, they paused, and then asked how to export their library instead of asking when sync would ship. That's someone who understood exactly what they were being offered, and decided the trade was worth it.</p>
+      </div>
+      <div style="grid-column:1/-1;">
+        <div class="stat-strip" style="margin-top:8px;">
+          <div class="cell"><b>9</b><span>professionals interviewed pre-build</span></div>
+          <div class="cell"><b>83%</b><span>relied on manual tagging</span></div>
+          <div class="cell"><b>67%</b><span>had lost a saved resource</span></div>
+          <div class="cell"><b>&lt;50ms</b><span>search and filter response</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="next-project wrap">
+    <span class="label">Next case study</span>
+    <a href="recipe-finder.html"><h2>Recipe Finder ↗</h2></a>
+  </section>
+</main>
+
+<footer><div class="wrap foot-row"><span>© 2026 Olumide Sajowa</span><div style="display:flex;gap:20px;"><a href="https://www.linkedin.com/in/olumidesajowa" target="_blank" rel="noopener">LinkedIn</a><a href="https://x.com/smyde2" target="_blank" rel="noopener">Twitter / X</a></div><a href="../contact.html">Get in touch</a></div></footer>
+
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="../main.js"></script>
+</body>
+</html>
