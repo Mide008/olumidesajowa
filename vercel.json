@@ -1,8 +1,1 @@
-{
-  "buildCommand": "",
-  "outputDirectory": ".",
-  "routes": [
-    { "src": "/(.*\\.(css|js|png|jpg|jpeg|svg|ico|webp|json|woff2?|ttf|eot))", "dest": "/olumide-portfolio-v5/$1" },
-    { "src": "/(.*)", "dest": "/index.html" }
-  ]
-}
+{"buildCommand":"","outputDirectory":"."}
