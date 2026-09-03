@@ -1,7 +1,1 @@
-﻿{
-  "name": "olumidesajowa-portfolio",
-  "version": "5.0.0",
-  "dependencies": {
-    "resend": "^4.0.0"
-  }
-}
+{"name":"olumidesajowa-portfolio","version":"5.0.0","dependencies":{"resend":"^4.0.0"}}
